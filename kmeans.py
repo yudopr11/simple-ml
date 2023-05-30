@@ -71,6 +71,8 @@ def assign_points(data_points, centers):
 
 def distance(a, b):
     """
+    Use euclidian distance to calculate distance of two points
+    a and b.
     """
     dimensions = len(a)
     
@@ -117,14 +119,19 @@ def generate_k(data_set, k):
 def k_means(dataset, k):
     """
     The K-Means algorithm follows a straightforward process:
-    1. Initialization: Choose the number of clusters (K) and randomly initialize K data points as the initial centroids.
-  2. Assignment: Assign each data point to the nearest centroid based on a distance metric (typically Euclidean distance). This step forms the clusters.
-
-Update: Recalculate the centroids as the mean of all data points belonging to each cluster.
-
-Iteration: Repeat steps 2 and 3 until convergence or until a maximum number of iterations is reached. Convergence occurs when the centroids no longer change significantly or when the predefined number of iterations is reached.
-
-Result: After convergence, the final output is a set of optimized clusters, with each data point belonging to a specific cluster.
+    1. Initialization: Choose the number of clusters (K) and 
+       randomly initialize K data points as the initial centroids.
+    2. Assignment: Assign each data point to the nearest centroid 
+       based on a distance metric (typically Euclidean distance). 
+       This step forms the clusters.
+    3. Update: Recalculate the centroids as the mean of all data 
+       points belonging to each cluster.
+    4. Iteration: Repeat steps 2 and 3 until convergence or until 
+       a maximum number of iterations is reached. Convergence occurs 
+       when the centroids no longer change significantly or when the 
+       predefined number of iterations is reached.
+    5. Result: After convergence, the final output is a set of optimized 
+       clusters, with each data point belonging to a specific cluster.
     """
     max_iter = 10000
     iter = 1
