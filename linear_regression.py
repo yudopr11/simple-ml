@@ -22,29 +22,29 @@ class LinearRegression:
         predictions = X @ self.coefficients
         return predictions
 
-# read data
+# Usage example
 data = pd.read_csv('data.csv')
 
-# separate independent and dependent variables
+# Separate independent and dependent variables
 X = data.iloc[:, 1:].values
 y = data.iloc[:, 0].values
 
-# split the data into training data and test data
+# Split the data into training data and test data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-# create a linear regression model object
+# Create a linear regression model object
 regressor = LinearRegression()
 
-# fit the model to the training data
+# Fit the model to the training data
 regressor.fit(X_train, y_train)
 
-# get the coefficients
+# Get the coefficients
 coefficients = regressor.coefficients
 
-# make predictions on new data
+# Make predictions on test data
 y_pred = regressor.predict(X_test)
 
-# visualization of prediction results
+# Visualization of prediction results
 plt.scatter(X_test, y_test, color='red')
 plt.plot(X_test, y_pred, color='blue')
 plt.title('Gaji vs. Tahun Pengalaman (Data Uji)')
