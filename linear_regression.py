@@ -1,6 +1,4 @@
-import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 class LinearRegression:
@@ -23,14 +21,10 @@ class LinearRegression:
         return predictions
 
 # Usage example
-data = pd.read_csv('data.csv')
+X_train = np.array([[1], [2], [3], [4], [5]])
+y_train = np.array([2, 4, 5, 4, 6])
 
-# Separate independent and dependent variables
-X = data.iloc[:, 1:].values
-y = data.iloc[:, 0].values
-
-# Split the data into training data and test data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+X_test = np.array([[6], [7], [8]])
 
 # Create a linear regression model object
 regressor = LinearRegression()
