@@ -25,6 +25,7 @@ X_train = np.array([[1], [2], [3], [4], [5]])
 y_train = np.array([2, 4, 5, 4, 6])
 
 X_test = np.array([[6], [7], [8]])
+y_test = np.array([7, 8, 8])
 
 # Create a linear regression model object
 regressor = LinearRegression()
@@ -41,7 +42,6 @@ y_pred = regressor.predict(X_test)
 # Visualization of prediction results
 plt.scatter(X_test, y_test, color='red')
 plt.plot(X_test, y_pred, color='blue')
-plt.title('Gaji vs. Tahun Pengalaman (Data Uji)')
-plt.xlabel('Tahun Pengalaman')
-plt.ylabel('Gaji')
+plt.xlabel('x')
+plt.ylabel('y')
 plt.show()
